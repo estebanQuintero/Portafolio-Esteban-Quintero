@@ -32,7 +32,8 @@ const Workflow: React.FC = () => {
                 {/* Visual representation based on step */}
                 <div className="relative z-10 p-4 transform group-hover:scale-110 transition-transform duration-500">
                    <div className="bg-slate-800 p-4 rounded-2xl border border-slate-700 shadow-inner">
-                      {React.cloneElement(step.icon as React.ReactElement, { className: "w-12 h-12 text-blue-400" })}
+                      {/* Se usa casting a React.ReactElement<any> para evitar el error de tipos en el build de Vercel */}
+                      {React.cloneElement(step.icon as React.ReactElement<any>, { className: "w-12 h-12 text-blue-400" })}
                    </div>
                 </div>
 
